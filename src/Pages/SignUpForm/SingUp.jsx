@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormBlockDiv, Input, Label } from './SingUp.styled';
+import { FormBlockDiv, Innput, Laabel } from './SingUp.styled';
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/operations';
 
@@ -34,8 +34,8 @@ const RegistrationForm = () => {
       <h2>SignIn</h2>
       <form onSubmit={handleSubmit}>
         <FormBlockDiv>
-          <Label htmlFor="username">Your name:</Label>
-          <Input
+          <Laabel htmlFor="username">Your name:</Laabel>
+          <Innput
             type="text"
             id="username"
             name="text"
@@ -45,8 +45,8 @@ const RegistrationForm = () => {
           />
         </FormBlockDiv>
         <FormBlockDiv>
-          <Label htmlFor="email">Your email:</Label>
-          <Input
+          <Laabel htmlFor="email">Your email:</Laabel>
+          <Innput
             type="email"
             id="email"
             name="email"
@@ -56,8 +56,8 @@ const RegistrationForm = () => {
           />
         </FormBlockDiv>
         <FormBlockDiv>
-          <Label htmlFor="password">Your password:</Label>
-          <Input
+          <Laabel htmlFor="password">Your password:</Laabel>
+          <Innput
             type="password"
             id="password"
             name="password"

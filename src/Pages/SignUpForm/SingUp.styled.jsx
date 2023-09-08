@@ -6,13 +6,13 @@ export const FormBlockDiv = styled.div`
   margin-bottom: 10px;
 `;
 
-export const Label = styled.label`
+export const Laabel = styled.label`
   font-size: 16px;
   margin-bottom: 5px;
   color: #333;
 `;
 
-export const Input = styled.input`
+export const Innput = styled.input`
   padding: 8px;
   font-size: 14px;
   border: 1px solid #ccc;
