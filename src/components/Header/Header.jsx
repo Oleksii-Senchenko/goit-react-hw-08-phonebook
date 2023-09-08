@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <>
       <HeaderTitle>
-        <h1>Your Website Name</h1>
+        <h1>Phonebook</h1>
         <nav>
           <Navlink to="/login">Login</Navlink>
           <Navlink to="registration">SingUp</Navlink>
