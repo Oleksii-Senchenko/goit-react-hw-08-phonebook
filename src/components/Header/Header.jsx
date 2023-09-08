@@ -1,14 +1,18 @@
-import { Navlink } from './Header.styled';
+import { Outlet } from 'react-router-dom';
+import { HeaderTitle, Navlink } from './Header.styled';
 
 const Header = () => {
   return (
-    <Header>
-      <h1>Your Website Name</h1>
-      <nav>
-        <Navlink to="/login">Login</Navlink>
-        <Navlink to="registration">Register</Navlink>
-      </nav>
-    </Header>
+    <>
+      <HeaderTitle>
+        <h1>Your Website Name</h1>
+        <nav>
+          <Navlink to="/login">Login</Navlink>
+          <Navlink to="registration">SingUp</Navlink>
+        </nav>
+      </HeaderTitle>
+      <Outlet />
+    </>
   );
 };
 

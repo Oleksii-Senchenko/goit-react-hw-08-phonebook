@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
-import RegistrationForm from 'Pages/RegistrationForm/RegistrationForm';
+import RegistrationForm from 'Pages/SignUpForm/SingUp';
 import LogInForm from 'Pages/LogInForm/LogInForm';
 
 export function App() {
