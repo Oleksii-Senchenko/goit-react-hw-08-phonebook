@@ -1,13 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { logOut } from 'redux/operations';
 
 const UserMenu = () => {
+  const dispatch = useDispatch();
   const name = useSelector(state => state.signUp);
   console.log(name);
   return (
     <>
       <h1>Salam </h1>
-      <button>LogOut</button>
+      <button onClick={() => dispatch(logOut())}>LogOut</button>
     </>
   );
 };

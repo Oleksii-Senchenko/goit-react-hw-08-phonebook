@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { FormBlockDiv, Innput, Laabel } from './SingUp.styled';
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/operations';
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const navigate = useNavigate();
   const handleChange = e => {
     const { name, value } = e.target;
     if (name === 'text') {
@@ -23,7 +24,9 @@ const RegistrationForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     console.log(name, email, password);
-    dispatch(registerUser({name, email, password})); 
+    dispatch(registerUser({ name, email, password }));
+    navigate('/phonebooklist');
+
     setName('');
     setEmail('');
     setPassword('');

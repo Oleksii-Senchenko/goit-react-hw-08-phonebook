@@ -1,4 +1,3 @@
-import { Outlet } from 'react-router-dom';
 import { HeaderTitle, Navlink } from './Header.styled';
 import UserMenu from 'components/UserMenu/UserMenu';
 import { useSelector } from 'react-redux';
