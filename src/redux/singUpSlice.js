@@ -14,19 +14,17 @@ const singUpSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(registerUser.fulfilled, (state, action) => {
-            state.user.name = action.payload;
-            state.user.email = action.payload;
+            state.user = action.payload;
             state.isLoggedIn = true
         })
         builder.addCase(logIn.fulfilled, (state, action) => {
-            state.user.name = action.payload;
-            state.user.email = action.payload;
+            state.user = action.payload;
             state.isLoggedIn = true
         })
-        builder.addCase(logOut.fulfilled, (state, action) => {
+        // builder.addCase(logOut.fulfilled, (state, action) => {
 
-            // state.isLoggedIn = false
-        })
+        //     // state.isLoggedIn = false
+        // })
     }
 })
 
