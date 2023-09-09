@@ -23,7 +23,7 @@ const RegistrationForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     console.log(name, email, password);
-    dispatch(registerUser(name, email, password)); 
+    dispatch(registerUser({name, email, password})); 
     setName('');
     setEmail('');
     setPassword('');
