@@ -13,7 +13,7 @@ function ContactListItem({ id, name, number }) {
       </p>
       <button
         onClick={() => {
-          dispatch(deleteContact(id));
+          // dispatch(deleteContact(id));
         }}
       >
         Delete

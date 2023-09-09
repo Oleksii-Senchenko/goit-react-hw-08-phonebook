@@ -1,7 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import RegistrationForm from 'Pages/SignUpForm/SingUp';
-import LogInForm from 'Pages/LogInForm/LogInForm';
+import LogInForm from 'Pages/LogInForm/LogIn';
+import ContactsPage from 'Pages/ContactsPage/ContactsPage';
 
 export function App() {
   return (
@@ -9,6 +10,7 @@ export function App() {
       <Route path="/" element={<Layout />}>
         <Route path="login" element={<LogInForm />} />
         <Route path="registration" element={<RegistrationForm />} />
+        <Route path="phonebooklist" element={<ContactsPage />} />
       </Route>
     </Routes>
   );

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { getContactsState } from 'redux/contactsSlice';
 import css from './ContactForm.module.css';
-import { addContact } from 'redux/operations';
+// import { addContact } from 'redux/operations';
 
 function ContactForm() {
-  const dispatch = useDispatch();
-  const contacts = useSelector(getContactsState);
+  // const dispatch = useDispatch();
+  // const contacts = useSelector(getContactsState);
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -25,24 +25,24 @@ function ContactForm() {
     if (!name || !number) {
       return;
     }
-    const finedNumber = contacts.find(
-      contact =>
-        contact.number && contact.number.toLowerCase() === number.toLowerCase()
-    );
+    // const finedNumber = contacts.find(
+    //   contact =>
+    //     contact.number && contact.number.toLowerCase() === number.toLowerCase()
+    // );
 
-    if (finedNumber) {
-      alert(
-        `In your phoneBook already have this number his name is ${finedNumber.name}`
-      );
-      return;
-    }
-    const newContact = {
-      id: nanoid(),
-      name,
-      number,
-    };
+    // if (finedNumber) {
+    //   alert(
+    //     `In your phoneBook already have this number his name is ${finedNumber.name}`
+    //   );
+    //   return;
+    // }
+    // const newContact = {
+    //   id: nanoid(),
+    //   name,
+    //   number,
+    // };
 
-    dispatch(addContact(newContact));
+    // dispatch(addContact(newContact));
     setName('');
     setNumber('');
   };

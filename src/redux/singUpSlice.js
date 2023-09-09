@@ -1,5 +1,5 @@
 const { createSlice } = require("@reduxjs/toolkit");
-const { registerUser } = require("./operations");
+const { registerUser, logIn } = require("./operations");
 
 const singUpSlice = createSlice({
     name: 'registration',
@@ -7,15 +7,21 @@ const singUpSlice = createSlice({
         user: {
             name: null,
             email: null,
-            password: null
-        }
+        },
+        token: null,
+        isLoggedIn: false
 
     },
     extraReducers: (builder) => {
         builder.addCase(registerUser.fulfilled, (state, action) => {
             state.user.name = action.payload;
             state.user.email = action.payload;
-            state.user.password = action.payload;
+            state.isLoggedIn = true
+        })
+        builder.addCase(logIn.fulfilled, (state, action) => {
+            state.user.name = action.payload;
+            state.user.email = action.payload;
+            state.isLoggedIn = true
         })
     }
 })
