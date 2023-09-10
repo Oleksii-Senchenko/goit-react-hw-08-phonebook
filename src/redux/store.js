@@ -1,6 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 // import contactsSlice from './contactsSlice';
-import singUpSlice from './singUpSlice';
+import singUpSlice from './auth/singUpSlice';
+import contactsSlice from './contacts/contactsSlice';
+import { filterSlice } from './contacts/filterSlice';
 // import { filterSlice } from './filterSlice';
 // import { registerUser } from './operations';
 
@@ -8,8 +10,8 @@ import singUpSlice from './singUpSlice';
 
 export const store = configureStore({
     reducer: {
-        signUp: singUpSlice.reducer,
-        // contacts: contactsSlice.reducer,
-        // filter: filterSlice.reducer
+        auth: singUpSlice.reducer,
+        contacts: contactsSlice.reducer,
+        filter: filterSlice.reducer
     }
 });

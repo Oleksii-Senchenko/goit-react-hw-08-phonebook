@@ -1,7 +1,7 @@
 // import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { FormBlockDiv, Input, Label } from './Login.styled';
-import { logIn } from 'redux/operations';
+import { logIn } from 'redux/auth/operationsAuth';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 

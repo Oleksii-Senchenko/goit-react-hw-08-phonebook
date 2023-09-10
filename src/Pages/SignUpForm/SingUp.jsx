@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FormBlockDiv, Innput, Laabel } from './SingUp.styled';
 import { useDispatch } from 'react-redux';
-import { registerUser } from 'redux/operations';
+import { registerUser } from 'redux/auth/operationsAuth';
 import { useNavigate } from 'react-router-dom';
 
 const RegistrationForm = () => {

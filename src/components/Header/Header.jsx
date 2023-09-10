@@ -3,11 +3,11 @@ import UserMenu from 'components/UserMenu/UserMenu';
 import { useSelector } from 'react-redux';
 
 const Header = () => {
-  const login = useSelector(state => state.signUp.isLoggedIn);
+  const login = useSelector(state => state.auth.isLoggedIn);
   return (
     <header>
       <HeaderTitle>
-      <h1>Phonebook</h1>
+        <h1>Phonebook</h1>
         {!login ? (
           <nav>
             <Navlink to="/login">Login</Navlink>

@@ -5,7 +5,7 @@ import Contactlist from 'components/Contactlist/Contactlist';
 import Filter from 'components/Filter/Filter';
 
 const ContactsPage = () => {
-  const login = useSelector(state => state.signUp.isLoggedIn);
+  const login = useSelector(state => state.auth.isLoggedIn);
   return (
     <div>
       {login ? (
@@ -20,7 +20,7 @@ const ContactsPage = () => {
           friends and business contacts.
         </h1>
       )}
-    </div> 
+    </div>
   );
 };
 
