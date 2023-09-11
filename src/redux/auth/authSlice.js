@@ -1,4 +1,4 @@
-import { logIn, logOut, registerUser } from "./operationsAuth";
+import { getCurrentUser, logIn, logOut, registerUser } from "./operationsAuth";
 
 const { createSlice } = require("@reduxjs/toolkit");
 
@@ -33,6 +33,10 @@ const singUpSlice = createSlice({
             }
             state.token = null
             state.isLoggedIn = false
+        })
+        builder.addCase(getCurrentUser.fulfilled, (state, action) => {
+            state.user = action.payload;
+            state.isLoggedIn = true
         })
     }
 })

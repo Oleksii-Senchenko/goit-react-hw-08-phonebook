@@ -1,15 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import singUpSlice from './auth/singUpSlice';
+import singUpSlice from './auth/authSlice';
 import contactsSlice from './contacts/contactsSlice';
 import { filterSlice } from './contacts/filterSlice';
 import storage from 'redux-persist/lib/storage'
 import {
-    persistStore, persistReducer, FLUSH,
-    REHYDRATE,
-    PAUSE,
-    PERSIST,
-    PURGE,
-    REGISTER
+    persistStore, persistReducer
 } from 'redux-persist';
 
 
@@ -28,9 +23,10 @@ export const store = configureStore({
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
-            serializableCheck: {
-                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-            },
+            serializableCheck: false
+            // {
+            //     ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+            // },
         }),
 });
 export const persistor = persistStore(store)

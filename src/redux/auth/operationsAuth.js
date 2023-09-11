@@ -14,7 +14,7 @@ const token = {
 }
 
 export const registerUser = createAsyncThunk(
-    'register/registerUser',
+    'auth/registerUser',
     async (newUser, thunkAPI) => {
         try {
             const responce = await axios.post('users/signup', newUser)
@@ -26,7 +26,7 @@ export const registerUser = createAsyncThunk(
     }
 )
 export const logIn = createAsyncThunk(
-    'logIn/logInUser',
+    'auth/logInUser',
     async (user, thunkAPI) => {
         try {
             const responce = await axios.post('users/login', user)
@@ -38,7 +38,7 @@ export const logIn = createAsyncThunk(
     }
 )
 export const logOut = createAsyncThunk(
-    'logOut/logOutUser',
+    'auth/logOutUser',
     async (_, thunkAPI) => {
         try {
             await axios.post('users/logout')
@@ -49,5 +49,24 @@ export const logOut = createAsyncThunk(
     }
 )
 
+export const getCurrentUser = createAsyncThunk(
+    'auth/getuset',
+    async (_, thunkAPI) => {
+        const state = thunkAPI.getState()
+        const lastToken = state.auth.token
+        if (token === null) {
+            console.log('Нет токена');
+            return
+        }
+        token.set(lastToken)
+        try {
 
+            const responce = await axios.get('users/current')
+            return responce.data
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.message)
+        }
+
+    }
+)
 

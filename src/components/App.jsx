@@ -3,8 +3,17 @@ import Layout from './Layout/Layout';
 import RegistrationForm from 'Pages/SignUpForm/SingUp';
 import LogInForm from 'Pages/LogInForm/LogIn';
 import ContactsPage from 'Pages/ContactsPage/ContactsPage';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getCurrentUser } from 'redux/auth/operationsAuth';
 
 export function App() {
+
+const dispatch = useDispatch()
+useEffect(()=>{
+  dispatch(getCurrentUser())
+})
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
