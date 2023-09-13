@@ -3,10 +3,8 @@ import { useDispatch } from 'react-redux';
 import { FormBlockDiv, Input, Label } from './Login.styled';
 import { logIn } from 'redux/auth/operationsAuth';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const LogInForm = () => {
-  const navigate = useNavigate();
 
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
@@ -15,7 +13,6 @@ const LogInForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(logIn({ email, password }));
-    navigate('/phonebooklist');
   };
 
   const handleChange = e => {

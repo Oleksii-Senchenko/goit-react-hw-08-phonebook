@@ -1,4 +1,4 @@
-import { getCurrentUser, logIn, logOut, registerUser } from "./operationsAuth";
+import { getCurrentUser, logIn, logOut, refreshUser, registerUser } from "./operationsAuth";
 
 const { createSlice } = require("@reduxjs/toolkit");
 
@@ -12,7 +12,8 @@ const singUpSlice = createSlice({
             email: '',
         },
         token: null,
-        isLoggedIn: false
+        isLoggedIn: false,
+        isRefreshing: false,
 
     },
     extraReducers: (builder) => {
@@ -37,6 +38,9 @@ const singUpSlice = createSlice({
         builder.addCase(getCurrentUser.fulfilled, (state, action) => {
             state.user = action.payload;
             state.isLoggedIn = true
+        })
+        builder.addCase(refreshUser.fulfilled, (state, action)=>{
+            state.isRefreshing = false;
         })
     }
 })
