@@ -9,9 +9,7 @@ import { getCurrentUser } from 'redux/auth/operationsAuth';
 import PublickRoute from './PublickRoute';
 import PrivateRoute from 'components/PrivateRoute';
 import Loader from './Loader/Loader';
-// import RegistrationForm from 'Pages/SignUpForm/SingUp';
-// import LogInForm from 'Pages/LogInForm/LogIn';
-// import ContactsPage from 'Pages/ContactsPage/ContactsPage';
+
 const RegistrationForm = lazy(() => import('Pages/SignUpForm/SingUp'));
 const LogInForm = lazy(() => import('Pages/LogInForm/LogIn'));
 const ContactsPage = lazy(() => import('Pages/ContactsPage/ContactsPage'));
