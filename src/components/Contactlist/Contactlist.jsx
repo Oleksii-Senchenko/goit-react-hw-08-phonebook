@@ -11,7 +11,7 @@ function Contactlist() {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getContacts);
+    dispatch(getContacts());
   }, [dispatch]);
 
   const filter = useSelector(getStateFilter);

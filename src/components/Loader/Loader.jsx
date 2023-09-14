@@ -6,7 +6,6 @@ import { LoaderWrapper } from './LoaderStyled';
 const Loader = () => {
   return (
     <LoaderWrapper>
-      {' '}
       <Audio
         height="80"
         width="80"
