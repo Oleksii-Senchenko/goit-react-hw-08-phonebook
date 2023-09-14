@@ -37,7 +37,7 @@ export function App() {
             element={
               <PublickRoute
                 component={RegistrationForm}
-                redirectTo="phonebooklist"
+                redirectTo="/phonebooklist"
               />
             }
           />
